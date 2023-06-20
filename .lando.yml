@@ -1,0 +1,14 @@
+# .lando.yml
+name: roots-bedrock
+recipe: wordpress
+config:
+  webroot: web
+  composer_version: 2-latest
+  database: mariadb
+  xdebug: true
+services:
+  appserver:
+    type: php:8.2 # Bedrock requires PHP >= 8.0
+    overrides:
+      environment:
+        XDEBUG_SESSION_START: lando
